@@ -59,5 +59,25 @@ describe Api::V1::App::TodosController do
       end
     end
 
+    context 'PUT #complete' do
+      it 'with valid attributes' do
+        params = { id: @todo.id, todo: { complete: true } }
+        put :update, params
+        @todo.reload
+        expect(response.status).to eql(200)
+        expect(JSON.parse(response.body)['error']).to eql(false)
+        expect(JSON.parse(response.body)['todo']['complete']).to eql(true)
+      end
+
+      it 'with invalid attributes' do
+        params = { id: @todo.id, todo: { title: "" } }
+        put :update, params
+        @todo.reload
+        expect(response.status).to eql(200)
+        expect(JSON.parse(response.body)['error']).to eql(true)
+        expect(JSON.parse(response.body)['todo']['complete']).to eql(false)
+      end
+    end
+
   end
 end
