@@ -4,11 +4,11 @@ Rails.application.routes.draw do
       namespace :app do
         resources :sessions, only: [:create]
         resources :users, only: [:index, :update]
-        # resources :todos, only: [:create, :update, :destroy] do
-        #   collection do
-        #     resources :complete, only: [:update]
-        #   end
-        # end
+        resources :todos, only: [:create, :update, :destroy] do
+          collection do
+            resources :complete, only: [:update]
+          end
+        end
       end
     end
   end
