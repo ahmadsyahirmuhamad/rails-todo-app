@@ -11,7 +11,7 @@ class Api::V1::App::BaseController < Api::V1::App::ApplicationController
   end
 
   def current_user
-    decoded_auth_token ||= AuthTokenService.decode(http_auth_header_content)
+    decoded_auth_token ||= AuthTokenServices.decode(http_auth_header_content)
     User.find_by(id: decoded_auth_token["user_id"]) if decoded_auth_token
   end
 end
