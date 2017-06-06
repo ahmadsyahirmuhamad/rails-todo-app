@@ -12,4 +12,10 @@ class User < ActiveRecord::Base
               uniqueness: true,
               length: { maximum: 255 },
               format: { with: VALID_EMAIL_REGEX }
+
+
+  def generate_auth_token
+    payload = { user_id: id }
+    AuthTokenServices.encode(payload)
+  end
 end
