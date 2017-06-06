@@ -4,7 +4,7 @@ class CreateTodos < ActiveRecord::Migration
       t.uuid :user_id
       t.string :title
       t.string :description
-      t.boolean :complete
+      t.boolean :complete, default: false
       t.timestamps null: false
     end
   end

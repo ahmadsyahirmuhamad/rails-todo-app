@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20170606132012) do
     t.uuid     "user_id"
     t.string   "title"
     t.string   "description"
-    t.boolean  "complete"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "complete",    default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
