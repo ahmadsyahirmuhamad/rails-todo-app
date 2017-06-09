@@ -2,6 +2,15 @@ class Api::App::V1::TodosController < Api::App::V1::BaseController
 
   before_action :current_todo, only: [:update, :destroy, :complete]
 
+  def index
+    response = {
+        todos: current_user.todos,
+        message: "Todos list",
+        error: false
+      }
+    render( json: response, status: 200)
+  end
+
   def create
     todo = current_user.todos.create(todos_params)
     if todo.valid?

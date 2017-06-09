@@ -10,6 +10,15 @@ describe Api::App::V1::TodosController do
       request.headers['Authorization'] = auth_token
     end
 
+    context 'get #index' do
+      it 'with valid attributes' do
+        get :index
+        expect(response.status).to eql(200)
+        expect(@user.todos.count).to eql(1)
+        expect(JSON.parse(response.body)['error']).to eql(false)
+      end
+    end
+
     context 'POST #create' do
       it 'with valid attributes' do
         params = { todo: build(:todo, user_id: @user.id).attributes }
