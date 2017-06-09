@@ -1,6 +1,6 @@
 require'rails_helper'
 
-describe Api::V1::App::SessionsController do
+describe Api::App::V1::SessionsController do
 
   describe 'POST #create' do
     before(:each) do

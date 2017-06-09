@@ -1,6 +1,6 @@
 require'rails_helper'
 
-describe Api::V1::App::UsersController do
+describe Api::App::V1::UsersController do
 
   describe 'Api::V1::App::UsersController' do
     before(:each) do

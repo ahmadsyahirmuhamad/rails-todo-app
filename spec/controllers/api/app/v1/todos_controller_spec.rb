@@ -1,6 +1,6 @@
 require'rails_helper'
 
-describe Api::V1::App::TodosController do
+describe Api::App::V1::TodosController do
 
   describe 'Api::V1::App::TodosController' do
     before(:each) do

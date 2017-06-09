@@ -1,4 +1,4 @@
-class Api::V1::App::BaseController < Api::V1::App::ApplicationController
+class Api::App::V1::BaseController < Api::App::V1::ApplicationController
   before_action :authenticate_request
 
   def http_auth_header_content

@@ -1,4 +1,4 @@
-class Api::V1::App::TodosController < Api::V1::App::BaseController
+class Api::App::V1::TodosController < Api::App::V1::BaseController
 
   before_action :current_todo, only: [:update, :destroy, :complete]
 

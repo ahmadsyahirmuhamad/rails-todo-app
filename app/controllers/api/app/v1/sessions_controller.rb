@@ -1,4 +1,4 @@
-class Api::V1::App::SessionsController < Api::V1::App::BaseController
+class Api::App::V1::SessionsController < Api::App::V1::BaseController
 
   skip_before_action :authenticate_request
 

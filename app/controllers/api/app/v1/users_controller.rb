@@ -1,4 +1,4 @@
-class Api::V1::App::UsersController < Api::V1::App::BaseController
+class Api::App::V1::UsersController < Api::App::V1::BaseController
 
   def index
     render( json:
