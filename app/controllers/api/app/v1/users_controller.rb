@@ -20,7 +20,7 @@ class Api::App::V1::UsersController < Api::App::V1::BaseController
       }
     else
       response = {
-        token: "",
+        token: current_user.generate_auth_token,
         users: current_user.attributes,
         message: "User Update Failed",
         error: true
