@@ -15,13 +15,13 @@ class Api::App::V1::TodosController < Api::App::V1::BaseController
     todo = current_user.todos.create(todos_params)
     if todo.valid?
       response = {
-        todo: todo.attributes,
+        todos: todo.attributes,
         message: "Create Todo Success",
         error: false
       }
     else
       response = {
-        todo: "",
+        todos: "",
         message: "Create Todo failed",
         error: true
       }
@@ -33,13 +33,13 @@ class Api::App::V1::TodosController < Api::App::V1::BaseController
     @todo.update_attributes(todos_params)
     if @todo.valid?
       response = {
-        todo: @todo.attributes,
+        todos: @todo.attributes,
         message: "Create Todo Success",
         error: false
       }
     else
       response = {
-        todo: @todo.attributes,
+        todos: @todo.attributes,
         message: "Create Todo failed",
         error: true
       }
@@ -50,13 +50,13 @@ class Api::App::V1::TodosController < Api::App::V1::BaseController
   def destroy
     if @todo.destroy
       response = {
-        todo: "",
+        todos: "",
         message: "destroy Todo Success",
         error: false
       }
     else
       response = {
-        todo: @todo.attributes,
+        todos: @todo.attributes,
         message: "destroy Todo failed",
         error: true
       }
@@ -68,13 +68,13 @@ class Api::App::V1::TodosController < Api::App::V1::BaseController
     @todo.update_attributes(todos_params)
     if @todo.valid?
       response = {
-        todo: @todo.attributes,
+        todos: @todo.attributes,
         message: "update complete Todo Success",
         error: false
       }
     else
       response = {
-        todo: @todo.attributes,
+        todos: @todo.attributes,
         message: "update complete Todo failed",
         error: true
       }
