@@ -19,7 +19,7 @@ class Api::App::V1::RegisterController < Api::App::V1::BaseController
         error: true
       }
     end
-    render( json: response, status: 200)
+    render( json: response, status: 200 )
   end
 
   def user_params

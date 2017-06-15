@@ -9,11 +9,7 @@ Rails.application.routes.draw do
         resources :sessions, only: [:create]
         resources :register, only: [:create]
         resources :users, only: [:index, :update]
-        resources :todos, only: [:index, :create, :update, :destroy] do
-          collection do
-            resources :complete, only: [:update]
-          end
-        end
+        resources :todos, only: [:index, :create, :update, :destroy]
       end
     end
   end
