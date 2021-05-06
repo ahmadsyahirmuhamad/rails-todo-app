@@ -9,7 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', '~> 1.0.0', group: :doc
 gem 'bcrypt'
 gem 'jwt'
 gem 'rack-cors', '~> 0.2.9', require: 'rack/cors'
