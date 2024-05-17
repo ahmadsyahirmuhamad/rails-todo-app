@@ -20,7 +20,7 @@ end
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 3.6.1'
   gem 'factory_girl_rails'
   gem 'faker'
 end
